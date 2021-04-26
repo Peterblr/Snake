@@ -7,31 +7,18 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Drow();
-
-            Point p2 = new Point(4, 7, '#');
-            p2.Drow();
-
-            List<int> nuList = new List<int>();
-            nuList.Add(0);
-            nuList.Add(1);
-            nuList.Add(2);
-
-            int x = nuList[0];
-            int y = nuList[1];
-            int z = nuList[2];
-
-            foreach(int i in nuList)
-            {
-                Console.WriteLine(i);
-            }
-
-            nuList.RemoveAt(0);
-            List < Point > pointList = new List<Point>();
-            pointList.Add(p1);
-            pointList.Add(p2);
-
+            Console.SetWindowSize(80, 25);
+            Console.SetBufferSize(80, 25);
+            
+            HorizontLine line_Top = new HorizontLine(0, 78, 0, 'o');
+            line_Top.Drow();
+            HorizontLine line_Bottom = new HorizontLine(0, 78, 24, 'o');
+            line_Bottom.Drow();
+            VerticalLine line_Left = new VerticalLine(0, 24, 0, 'o');
+            line_Left.Drow();
+            VerticalLine line_Reight = new VerticalLine(0, 24, 78, 'o');
+            line_Reight.Drow();
+            Console.ReadKey();
 
         }
 
